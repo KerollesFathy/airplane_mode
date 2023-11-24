@@ -1,0 +1,15 @@
+<!-- myapp/myapp/www/color_page.html -->
+
+{% if frappe.form_dict.color %}
+<div class="color-rectangle" style="background-color: {{ frappe.form_dict.color }}"></div>
+{% else %}
+    <div class="color-rectangle" style="background-color: black;"></div>
+{% endif %}
+<style>
+    .color-rectangle {
+        width: 600px;
+        height: 400px;
+        margin: 20px;
+        border: 1px solid #000;
+    }
+</style>
