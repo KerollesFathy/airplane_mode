@@ -19,7 +19,10 @@ class AirplaneTicket(Document):
 	def validate(self):
 		self.validate_unique_add_ons()
 		self.calculate_total_amount()
-	
+
+	def on_submit(self):
+		frappe.db.set_value("Airplane Flight", self.flight, "status", "Completed")
+
 	def validate_unique_add_ons(self):
 		unique_add_ons = self.get_unique_add_ons()
 		if len(unique_add_ons):
