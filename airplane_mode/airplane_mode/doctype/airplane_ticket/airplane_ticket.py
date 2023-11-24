@@ -3,9 +3,14 @@
 
 import frappe
 from frappe.model.document import Document
+import random
+import string
 
 class AirplaneTicket(Document):
 
+	def before_insert(self):
+		self.generate_seat_number()
+		
 	def before_submit(self):
 		if self.status != "Boarded":
 			help_info =  "<span class='text-muted'>help: change the status to Boarded to be able submit the ticket :) </span>"
@@ -39,6 +44,11 @@ class AirplaneTicket(Document):
 
 		return unique_add_ons
 	
+	def generate_seat_number(self):
+		random_integer = random.randint(1, 100)
+		random_alphabet = random.choice(string.ascii_uppercase)
+		self.seat = f"{random_integer}{random_alphabet}"
+
 
 
 
