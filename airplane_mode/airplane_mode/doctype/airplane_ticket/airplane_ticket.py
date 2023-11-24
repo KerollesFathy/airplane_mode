@@ -1,10 +1,16 @@
 # Copyright (c) 2023, k.fathy@axentor.co and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 class AirplaneTicket(Document):
+
+	def before_submit(self):
+		if self.status != "Boarded":
+			help_info =  "<span class='text-muted'>help: change the status to Boarded to be able submit the ticket :) </span>"
+			frappe.throw(f"u can't submit the ticket with status <b>{self.status}</b><hr> {help_info}")
+
 	def validate(self):
 		self.validate_unique_add_ons()
 		self.calculate_total_amount()
