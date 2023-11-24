@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format:{airplane}-{MM}-{YY}-{#####}",
  "creation": "2023-11-24 14:28:51.691675",
@@ -22,7 +23,10 @@
   "time_of_departure",
   "column_break_d5ul2",
   "duration",
-  "amended_from"
+  "amended_from",
+  "route",
+  "column_break_m8yur",
+  "published"
  ],
  "fields": [
   {
@@ -118,9 +122,26 @@
   {
    "fieldname": "column_break_jtrtb",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "column_break_m8yur",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "is_submittable": 1,
  "links": [
   {
@@ -128,7 +149,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2023-11-24 14:49:47.854247",
+ "modified": "2023-11-24 17:58:36.746503",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -148,6 +169,7 @@
    "write": 1
   }
  ],
+ "route": "flights",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
