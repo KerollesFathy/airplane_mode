@@ -47,7 +47,7 @@ class AirplaneTicket(Document):
 		return unique_add_ons
 	
 	def generate_seat_number(self):
-		random_integer = random.randint(1, 100)
+		random_integer = random.randint(10, 100)
 		random_alphabet = random.choice(string.ascii_uppercase)
 		self.seat = f"{random_integer}{random_alphabet}"
 

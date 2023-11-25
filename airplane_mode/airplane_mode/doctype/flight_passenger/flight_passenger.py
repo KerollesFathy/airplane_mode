@@ -6,6 +6,8 @@ from frappe.model.document import Document
 
 class FlightPassenger(Document):
 	def before_save(self):
+		if not self.last_name:
+			frappe.throw("Please set last name")
 		self.full_name = self.first_name + " " +  self.last_name
 	
 	def validate(self):
