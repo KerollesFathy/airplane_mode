@@ -20,8 +20,7 @@ class AirplaneTicket(Document):
 		self.validate_unique_add_ons()
 		self.calculate_total_amount()
 
-	def on_submit(self):
-		frappe.db.set_value("Airplane Flight", self.flight, "status", "Completed")
+
 
 	def validate_unique_add_ons(self):
 		unique_add_ons = self.get_unique_add_ons()
@@ -34,7 +33,7 @@ class AirplaneTicket(Document):
 		total_add_ons_amount = 0.0
 		for add_on in self.add_ons:
 			total_add_ons_amount += add_on.amount
-		self.total_amount = self.flight_price or 0.0 + total_add_ons_amount
+		self.total_amount = self.flight_price + total_add_ons_amount
 	
 	def get_unique_add_ons(self):
 		unique_add_ons = []
