@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{flight}-{source_airport_code}-to-{destination_airport_code}",
+ "autoname": "format:{flight}-{source_airport_code}-to-{destination_airport_code}-{####}",
  "creation": "2023-11-13 14:47:24.651876",
  "default_view": "List",
  "doctype": "DocType",
@@ -157,7 +157,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-11-25 16:39:58.138261",
+ "modified": "2023-11-28 22:03:15.213127",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

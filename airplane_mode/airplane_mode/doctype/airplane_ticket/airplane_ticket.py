@@ -19,6 +19,7 @@ class AirplaneTicket(Document):
 	def validate(self):
 		self.validate_unique_add_ons()
 		self.calculate_total_amount()
+		self.validate_capacity()
 
 
 
@@ -50,6 +51,14 @@ class AirplaneTicket(Document):
 		random_integer = random.randint(10, 100)
 		random_alphabet = random.choice(string.ascii_uppercase)
 		self.seat = f"{random_integer}{random_alphabet}"
+
+	def validate_capacity(self):
+		airplane = frappe.db.get_value("Airplane Flight", self.flight, "airplane")
+		airplane_capacity = frappe.db.get_value("Airplane", airplane, "capacity")
+		total_tickets = frappe.db.count("Airplane Ticket", {"flight": self.flight, "docstatus": 1})
+		
+		if total_tickets >= airplane_capacity:
+			frappe.throw("Flight is fully booked")
 
 
 
