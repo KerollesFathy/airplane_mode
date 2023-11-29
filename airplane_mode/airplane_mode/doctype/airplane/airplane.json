@@ -10,7 +10,8 @@
  "field_order": [
   "model",
   "airline",
-  "capacity"
+  "capacity",
+  "initial_audit_completed"
  ],
  "fields": [
   {
@@ -35,6 +36,13 @@
    "label": "Capacity",
    "non_negative": 1,
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "initial_audit_completed",
+   "fieldtype": "Check",
+   "label": "Initial Audit Completed",
+   "permlevel": 3
   }
  ],
  "index_web_pages_for_search": 1,
@@ -44,7 +52,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2023-11-13 15:13:24.767904",
+ "modified": "2023-11-29 00:08:17.591567",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane",
