@@ -14,6 +14,15 @@ frappe.ui.form.on("Airplane Ticket", {
 				"Select Seat",
 				"Assign"
 			)
-		} , "Actions")
+		}, "Actions")
+		
+		// frm.set_query("gate_number", function (doc, cdt, cdn) {
+		// 	return {
+		// 		filters: [
+		// 			["Gate", "code", "=", frm.doc.source_airport_code] 
+		// 		]
+		// 	}
+			
+		// });
 	}
 });

@@ -11,7 +11,9 @@
   "first_name",
   "last_name",
   "full_name",
-  "date_of_birth"
+  "column_break_bbbbs",
+  "date_of_birth",
+  "is_crew_member"
  ],
  "fields": [
   {
@@ -38,6 +40,16 @@
    "fieldtype": "Data",
    "label": "Full Name",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_crew_member",
+   "fieldtype": "Check",
+   "label": "is Crew Member"
+  },
+  {
+   "fieldname": "column_break_bbbbs",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -47,7 +59,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2023-11-20 14:57:14.265686",
+ "modified": "2023-11-30 15:17:09.787335",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flight Passenger",

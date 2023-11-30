@@ -26,7 +26,10 @@
   "amended_from",
   "route",
   "column_break_m8yur",
-  "published"
+  "published",
+  "gate",
+  "crew_mebmers_section",
+  "members"
  ],
  "fields": [
   {
@@ -137,6 +140,24 @@
    "fieldname": "published",
    "fieldtype": "Check",
    "label": "Published"
+  },
+  {
+   "fieldname": "crew_mebmers_section",
+   "fieldtype": "Section Break",
+   "label": "Crew Members"
+  },
+  {
+   "fieldname": "members",
+   "fieldtype": "Table",
+   "label": "Members",
+   "options": "Crew Members"
+  },
+  {
+   "fieldname": "gate",
+   "fieldtype": "Link",
+   "label": "Gate",
+   "options": "Gate",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
@@ -149,7 +170,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2023-11-24 17:58:36.746503",
+ "modified": "2023-11-30 15:51:15.350242",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
