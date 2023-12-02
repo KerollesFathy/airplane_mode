@@ -147,7 +147,7 @@ scheduler_events = {
 	# ],
 	"cron": {
 		# Run at 9:00 AM on the 1st day of every month: 
-        "0 9 1 * *",[
+        "0 9 1 * *": [
             "airplane_mode.airplane_mode.rent_reminder.send_rent_due_reminder"
         ],
      
