@@ -1,0 +1,47 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport",
+   "width": 250
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "width": 250
+  },
+  {
+   "fieldname": "_count",
+   "fieldtype": "Int",
+   "label": "Count",
+   "width": 250
+  }
+ ],
+ "creation": "2023-12-02 16:59:25.344852",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-12-02 17:04:43.865187",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Shops Availability",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "Select airport, status, count(status) as _count from `tabShop` group by status, airport",
+ "ref_doctype": "Shop",
+ "report_name": "Shops Availability",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

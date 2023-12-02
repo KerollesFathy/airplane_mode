@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:RENT-PAY-{YYYY}-{####}",
+ "creation": "2023-12-02 15:52:56.900784",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "against_contract",
+  "shop_and_tenant_details_section",
+  "tenant",
+  "date_of_expiry",
+  "column_break_g1gve",
+  "shop",
+  "payment_details_section",
+  "payment_amount",
+  "column_break_3klyt",
+  "payment_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "against_contract.tenant_name",
+   "fieldname": "tenant",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Tenant",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "against_contract",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Against Contract",
+   "options": "Contract",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "against_contract.shop",
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Shop",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fetch_from": "against_contract.rent_amount",
+   "fieldname": "payment_amount",
+   "fieldtype": "Currency",
+   "label": "Payment Amount"
+  },
+  {
+   "default": "Today",
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Payment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3klyt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shop_and_tenant_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Details"
+  },
+  {
+   "fieldname": "column_break_g1gve",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "against_contract.date_of_expiry",
+   "fieldname": "date_of_expiry",
+   "fieldtype": "Date",
+   "label": "Date of Expiry",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-12-02 16:08:37.520055",
+ "modified_by": "Administrator",
+ "module": "Airport Shop",
+ "name": "Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

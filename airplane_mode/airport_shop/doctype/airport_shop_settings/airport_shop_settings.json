@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-02 17:51:40.696663",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "notification_settings_section",
+  "enable_rent_reminder",
+  "column_break_kaiec",
+  "email_template"
+ ],
+ "fields": [
+  {
+   "fieldname": "notification_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Notification Settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_rent_reminder",
+   "fieldtype": "Check",
+   "label": "Enable Rent Reminder"
+  },
+  {
+   "fieldname": "email_template",
+   "fieldtype": "Link",
+   "label": "Email Template",
+   "mandatory_depends_on": "eval:doc.enable_rent_reminder === 1",
+   "options": "Email Template"
+  },
+  {
+   "fieldname": "column_break_kaiec",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-12-02 17:52:10.220224",
+ "modified_by": "Administrator",
+ "module": "Airport Shop",
+ "name": "Airport Shop Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

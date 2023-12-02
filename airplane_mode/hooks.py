@@ -129,23 +129,30 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"airplane_mode.tasks.all"
-#	],
-#	"daily": [
-#		"airplane_mode.tasks.daily"
-#	],
-#	"hourly": [
-#		"airplane_mode.tasks.hourly"
-#	],
-#	"weekly": [
-#		"airplane_mode.tasks.weekly"
-#	],
-#	"monthly": [
-#		"airplane_mode.tasks.monthly"
-#	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"airplane_mode.tasks.all"
+	# ],
+	# "daily": [
+	# 	"airplane_mode.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"airplane_mode.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"airplane_mode.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"airplane_mode.tasks.monthly"
+	# ],
+	"cron": {
+		# Run at 9:00 AM on the 1st day of every month: 
+        "0 9 1 * *",[
+            "airplane_mode.airplane_mode.rent_reminder.send_rent_due_reminder"
+        ],
+     
+    }
+}
 
 # Testing
 # -------
